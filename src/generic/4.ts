@@ -3,16 +3,16 @@
 */
 
 interface IClass {
-  title?: string;
+  title: string;
 }
-class Component<T extends IClass> {
+class Component<T> {
   constructor(public props: T) {
     //
     //
   }
 }
 
-class Page<T extends IClass> extends Component<T> {
+class Page extends Component<IClass> {
   pageInfo(): void {
     console.log(this.props.title);
   }
